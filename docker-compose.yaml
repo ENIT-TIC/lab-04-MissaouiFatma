@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - db-volume:/data
+    environment:
+      - DB_PATH=/data/books.db
+
+volumes:
+  db-volume:
